@@ -1,7 +1,5 @@
 use scrypto::prelude::*;
 
-
-
 #[blueprint]
 mod bankaccount {
     struct BankAccount {
@@ -40,7 +38,6 @@ mod bankaccount {
         pub fn withdraw(&mut self,withdraw_amount: Decimal) -> Bucket {
             self.account_balance.take(withdraw_amount)                        
         }
-        
 
         pub fn deposit(&mut self, bucket_deposit: Bucket) {
             if bucket_deposit.resource_address() == XRD {
@@ -49,7 +46,6 @@ mod bankaccount {
             else {
                 self.account_balance.put(bucket_deposit);
             }
-            
         }
     }
 }

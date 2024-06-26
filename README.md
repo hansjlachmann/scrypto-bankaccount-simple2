@@ -1,6 +1,8 @@
 # 1. Radix Scrypto Simple Bank account example
 
 Running the example is much the same as the running the original Hello example (https://github.com/radixdlt/official-examples/tree/main/step-by-step/02-hello-token-explained)
+A very simple example which allows you to withdraw and deposit from a bank account in both EURO and XRD
+
 
 0.  First, reset the simulator and create a new account.
     ```sh
