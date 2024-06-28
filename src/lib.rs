@@ -4,7 +4,7 @@ use scrypto::prelude::*;
 mod bankaccount {
     struct BankAccount {
         account_balance: Vault,
-        xrd_balance: Vault
+        xrd_balance: Vault,
     }
 
     impl BankAccount {
@@ -46,6 +46,11 @@ mod bankaccount {
             else {
                 self.account_balance.put(bucket_deposit);
             }
+        }
+
+        pub fn burn_from_vault(&mut self, burn_amount: Decimal) {
+            let tokens_to_burn = self.account_balance.take(burn_amount);   
+            tokens_to_burn.burn();
         }
     }
 }
